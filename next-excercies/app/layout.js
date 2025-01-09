@@ -76,6 +76,12 @@ export default function RootLayout({ children }) {
                 >
                   Register
                 </a>
+                <a
+                  href="/user/dashboard/"
+                  className="flex items-center p-3 rounded-lg hover:bg-gray-700"
+                >
+                  Dashboard
+                </a>
               </nav>
             </div>
           </aside>

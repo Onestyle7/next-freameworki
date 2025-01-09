@@ -1,19 +1,18 @@
 "use client";
 import { useAuth } from "@/app/lib/AuthContext";
 import { useLayoutEffect } from "react";
-import { redirect, usePathname } from "next/navigation";
+import { redirect } from "next/navigation";
+import { usePathname } from "next/navigation";
 
-function ProtectedLayout({ children }) {
+export default function Layout({ children }) {
   const { user } = useAuth();
-  const pathname = usePathname();
+  const returnUrl = usePathname();
 
   useLayoutEffect(() => {
     if (!user) {
-      redirect(`/user/signin?returnUrl=${pathname}`);
+      redirect(`/user/signin?returnUrl=${returnUrl}`);
     }
-  }, [user, pathname]);
+  }, [user, returnUrl]);
 
   return <>{children}</>;
 }
-
-export default ProtectedLayout;
