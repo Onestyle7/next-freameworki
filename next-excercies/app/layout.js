@@ -82,6 +82,18 @@ export default function RootLayout({ children }) {
                 >
                   Dashboard
                 </a>
+                <a
+                  href="/user/profile/"
+                  className="flex items-center p-3 rounded-lg hover:bg-gray-700"
+                >
+                  Profile
+                </a>
+                <a
+                  href="/user/articles/"
+                  className="flex items-center p-3 rounded-lg hover:bg-gray-700"
+                >
+                  Articles
+                </a>
               </nav>
             </div>
           </aside>
