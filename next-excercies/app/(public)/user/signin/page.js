@@ -26,7 +26,7 @@ export default function SignInPage() {
       await signInWithEmailAndPassword(auth, data.email, data.password);
 
       // Przekierowanie po zalogowaniu
-      router.push(returnUrl || "/");
+      router.push(returnUrl || "/user/profile");
     } catch (error) {
       alert(error.message); // Prosty alert w razie błędu
     }
@@ -43,10 +43,14 @@ export default function SignInPage() {
         </h2>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-bold text-gray-700">
+        <label
+          htmlFor="emailField"
+          className="block mb-2 text-sm font-bold text-gray-700"
+        >
             Email
           </label>
           <input
+            id="emailField"
             type="email"
             placeholder="Email"
             {...register("email", { required: "Email jest wymagany" })}
@@ -58,10 +62,13 @@ export default function SignInPage() {
         </div>
 
         <div className="mb-6">
-          <label className="block mb-2 text-sm font-bold text-gray-700">
+          <label 
+          htmlFor="passwordField"
+          className="block mb-2 text-sm font-bold text-gray-700">
             Hasło
           </label>
           <input
+            id="passwordField"
             type="password"
             placeholder="Hasło"
             {...register("password", { required: "Hasło jest wymagane" })}
